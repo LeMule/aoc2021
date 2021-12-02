@@ -1,9 +1,10 @@
+#include <Declarations.h>
+
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <map>
 
-int main()
+Solution1::Solution1(std::string inputFileStr)
 {
 	std::string lineInput = "";
 	uint32_t inputInt = 0;
@@ -11,7 +12,7 @@ int main()
 	std::pair<uint32_t, uint32_t> resultsCount;
 	std::ifstream puzzleInputFile;
 
-	puzzleInputFile.open("puzzle.input");
+	puzzleInputFile.open(inputFileStr);
 	if(puzzleInputFile.is_open())
 	{
 		std::getline(puzzleInputFile, lineInput);
@@ -34,5 +35,4 @@ int main()
 	}
 
 	std::cout << "Result is : " << resultsCount.first << "\n";
-	return 0;
 }
